@@ -1,0 +1,35 @@
+$red-basic: #d03e46;
+$base-black: #0d1928;
+
+body {
+  background-color: #f1f1f1;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.navbar-inverse {
+  background-color: $base-black;
+  border: 2px dashed black;
+  color: aliceblue;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  .container-fluid {
+    .nome-link {
+      font-size: 120%;
+      color: $red-basic;
+      font-weight: 900; 
+      font-style: oblique;
+      text-decoration: none; 
+    }
+  }
+}
+
+article {  
+  img {
+    width: 50%;
+    float:none;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
