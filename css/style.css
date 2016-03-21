@@ -1,0 +1,26 @@
+body {
+  background-color: #f1f1f1;
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.navbar-inverse {
+  background-color: #0d1928;
+  border: 2px dashed black;
+  color: aliceblue;
+  padding-bottom: 5px;
+  padding-top: 5px; }
+  .navbar-inverse .container-fluid .nome-link {
+    font-size: 120%;
+    color: #d03e46;
+    font-weight: 900;
+    font-style: oblique;
+    text-decoration: none; }
+
+article img {
+  width: 50%;
+  float: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*# sourceMappingURL=style.css.map */
