@@ -1,0 +1,26 @@
+{
+  "name": "joaomarcuslf.github.io",
+  "version": "2.2.6",
+  "description": "My personal Website",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaomarcuslf/joaomarcuslf.github.io.git"
+  },
+  "author": "João Marcus de Lemos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaomarcuslf/joaomarcuslf.github.io/issues"
+  },
+  "homepage": "https://github.com/joaomarcuslf/joaomarcuslf.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.5",
+    "gulp-uglifyjs": "^0.6.2"
+  }
+}

@@ -1,6 +1,12 @@
 @import "variables.less";
 @import "mixins.less";
 
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
 	overflow-x: hidden;
 }
@@ -431,3 +437,4 @@ footer {
     	display: none;
     }
 }
+
