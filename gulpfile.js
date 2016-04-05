@@ -1,9 +1,10 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglifyjs')
-var less = require('gulp-less');
-var path = require('path');
-var cleanCSS = require('gulp-clean-css');
+var gulp = require('gulp'),
+	concat = require('gulp-concat'),
+	uglify = require('gulp-uglifyjs'),
+	less = require('gulp-less'),
+	path = require('path'),
+	cleanCSS = require('gulp-clean-css'),
+	cssbeautify = require('gulp-cssbeautify');
 
 gulp.task('concat', function() {
   return gulp.src('./js/scripts/*.js')
@@ -18,10 +19,10 @@ gulp.task('less', function () {
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(gulp.dest('css/'))
-    .pipe(cleanCSS({compatibility: 'ie8'}));
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(cssbeautify());
 });
 
 gulp.task('less:watch', function () {
   gulp.watch('less/**/*.less',['less']);
 });
-
