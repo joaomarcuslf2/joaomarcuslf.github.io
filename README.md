@@ -6,6 +6,7 @@ Used:
 - Less
 - Gulp.js
 - Sass
+- Jekyll
 
 __TODO__
 
