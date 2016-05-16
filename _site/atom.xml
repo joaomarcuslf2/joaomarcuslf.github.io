@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Joaomarcuslf - My Website</title>
+ <link href="http://joaomarcuslf.github.io/atom.xml" rel="self"/>
+ <link href="http://joaomarcuslf.github.io"/>
+ <updated>2016-05-15T21:35:18-03:00</updated>
+ <id>http://joaomarcuslf.github.io</id>
+ <author>
+   <name>Joao Marcus Fernandes</name>
+   <email>jmarcusfernandes@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Hello World</title>
+   <link href="http://joaomarcuslf.github.io/fun/2016/05/15/hello-world"/>
+   <updated>2016-05-15T00:00:00-03:00</updated>
+   <id>http://joaomarcuslf.github.io/fun/2016/05/15/hello-world</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ 
+</feed>
