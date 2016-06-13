@@ -13,3 +13,4 @@ Used:
 
   - Convert Less code to Sass
   - Create a not found page
+  - Revert project to reimplement Jekyll
