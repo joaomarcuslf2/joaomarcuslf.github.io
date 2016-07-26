@@ -1,0 +1,32 @@
+{
+  "name": "joaomarcuslf.github.io",
+  "version": "2.2.6",
+  "description": "My personal Website",
+  "main": "js/main.js",
+  "authors": [
+    "João Marcus Fernandes <jmarcusfernandes@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaomarcuslf/joaomarcuslf.github.io.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaomarcuslf/joaomarcuslf.github.io/issues"
+  },
+  "homepage": "https://github.com/joaomarcuslf/joaomarcuslf.github.io#readme",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "lib"
+  ],
+  "dependencies": {
+    "jquery": "2.2.0",
+    "angular": "1.5.7",
+    "bootstrap": "3.3.6"
+  },
+  "homepage": ""
+}
