@@ -1,9 +1,8 @@
 title: joaomarcuslf
 email: jmarcusfernandes@gmail.com
 description: > 
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  João Marcus Fernandes, Coffee lover, front-end developer and UX/UI designer.
+  I like to code as much as I like coffee.
 baseurl: "/"
 url: "http://joaomarcuslf.github.io"
 twitter_username: joaomarcuslf
@@ -16,5 +15,14 @@ layouts_dir:  ./_layouts
 data_dir:     ./_data
 includes_dir: ./_includes
 host: 0.0.0.0
+
+production_url : http://joaomarcuslf.github.io
+gems: ["jekyll-sitemap", "webrick"]
+
+exclude: [
+  "node_modules",
+  "bower_components",
+  ".sass-cache"
+]
 
 markdown: kramdown
