@@ -1,7 +1,8 @@
 var gulp             = require('gulp'),
 		browsersync      = require('browser-sync'),
-		concat           = require('gulp-concat'),
 		clean            = require('gulp-clean'),
+		concat           = require('gulp-concat'),
+		count            = require('gulp-count'),
 		multiprocess     = require('gulp-multi-process'),
 		rename           = require('gulp-rename'),
 		runsequence      = require('run-sequence'),
@@ -24,7 +25,7 @@ var csslint      = require('gulp-csslint'),
 
 /* SCSS */
 
-var sass     = require('gulp-sass'),
+var sass     = require('gulp-ruby-sass'),
 		scsslint = require('gulp-scss-lint');
 
 /* JS */
@@ -236,7 +237,7 @@ gulp.task('lint:scss', function () {
 
 gulp.task('compile:scss', function () {
 		console.log("Compiling normal SCSS files");
-		return sass('./assets/scss/**/*')
+		return sass('./assets/scss/**/*.scss')
 				.on('error', sass.logError)
 				.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 				.pipe(browsersync.reload({stream:true}))
@@ -247,10 +248,11 @@ gulp.task('compile:custom:scss', function () {
 		console.log("Compiling custom SCSS file");
 		return sass('./assets/scss/style.scss')
 				.on('error', sass.logError)
+				.pipe(count('## scss-files selected'))
 				.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 				.pipe(browsersync.reload({stream:true}))
-				.pipe(rename('custom.css'))
-				.pipe(gulp.dest('lib/custom/'));
+				.pipe(gulp.dest('lib/custom/'))
+				.pipe(rename('custom.css'));
 });
 
 // IMG
@@ -268,6 +270,7 @@ gulp.task('watch:img', function () {
 gulp.task('minify:img', function () {
 		console.log("Minifying IMG");
 		return gulp.src('./assets/img/**/')
+				.pipe(count('## img-files selected'))
 				.pipe(imageMin({
 						optimizationLevel: 9
 				}))
