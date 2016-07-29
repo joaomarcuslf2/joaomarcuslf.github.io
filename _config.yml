@@ -8,13 +8,30 @@ url: "http://joaomarcuslf.github.io"
 twitter_username: joaomarcuslf
 github_username:  joaomarcuslf
 encoding: utf-8
-source:       .
-destination:  ./_site
-plugins_dir:  ./_plugins
-layouts_dir:  ./_layouts
-data_dir:     ./_data
-includes_dir: ./_includes
+source:       ./
+destination:  ./dist/
+plugins_dir:  ./plugins/
+layouts_dir:  ./layouts/
+data_dir:     ./data/
+includes_dir: ./includes/
+assest_dir:   ./assets/
+libs_dir:     ./lib/
+permalink:    /404.html
 host: 0.0.0.0
+
+navigation:
+- text: Main
+  url: /
+  layout: default
+- text: About me
+  url: /about/
+  layout: default
+- text: Services
+  url: /services/
+  layout: default
+- text: Portifolio
+  url: /portifolio/
+  layout: portifolio
 
 production_url : http://joaomarcuslf.github.io
 gems: ["jekyll-sitemap", "webrick"]
@@ -22,7 +39,11 @@ gems: ["jekyll-sitemap", "webrick"]
 exclude: [
   "node_modules",
   "bower_components",
-  ".sass-cache"
+  ".sass-cache",
+  "assets",
+  "test",
+  "includes",
+  "layouts"
 ]
 
 markdown: kramdown

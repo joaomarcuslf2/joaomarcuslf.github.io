@@ -9,34 +9,38 @@ var gulp             = require('gulp'),
 		sourcemaps       = require('gulp-sourcemaps'),
 		todo             = require('gulp-todo'),
 		cp               = require('child_process'),
-		exec             = require('child_process').exec;
+		run              = require('gulp-run'),
+		path             = require('path'),
+		karma            = require('karma'),
+		karmaParseConfig = require('karma/lib/config').parseConfig;
 
-var htmlmin  = require('gulp-htmlmin'),
-		htmlLint = require('gulp-html-lint');
+var htmlmin          = require('gulp-htmlmin'),
+		htmlLint         = require('gulp-html-lint');
 
 /* CSS */
 
-var csslint      = require('gulp-csslint'),
-		cleancss     = require('gulp-clean-css'),
-		beautify     = require('gulp-cssbeautify'),
-		cssComb      = require('gulp-csscomb'),
-		uncss        = require('gulp-uncss'),
-		autoprefixer = require('gulp-autoprefixer');
+var csslint          = require('gulp-csslint'),
+		cleancss         = require('gulp-clean-css'),
+		beautify         = require('gulp-cssbeautify'),
+		csscomb          = require('gulp-csscomb'),
+		uncss            = require('gulp-uncss'),
+		autoprefixer     = require('gulp-autoprefixer');
 
 /* SCSS */
 
-var sass     = require('gulp-ruby-sass'),
-		scsslint = require('gulp-scss-lint');
+var sass             = require('gulp-ruby-sass'),
+		scsslint         = require('gulp-scss-lint');
 
 /* JS */
 
-var uglify = require('gulp-uglifyjs'),
-		jshint = require('gulp-jshint'),
-		jslint = require('gulp-jslint');
+var uglify           = require('gulp-uglifyjs'),
+		jshint           = require('gulp-jshint'),
+		jslint           = require('gulp-jslint'),
+		babel            = require('gulp-babel');;
 
 /* Images */
 
-var imageMin = require('gulp-imagemin');
+var imagemin         = require('gulp-imagemin');
 
 /* Resources */
 
@@ -54,17 +58,32 @@ gulp.task('default', function () {
 				.pipe(jshint.reporter('default'));
 });
 
+gulp.task('test', function (cb) {
+	return runKarma('karma.config.js', {
+		autoWatch: false,
+		singleRun: true
+	}, cb);
+});
+
 gulp.task('jekyll', function (done) {
 	console.log("Building Jekyll site");
 	browsersync.notify(messages.jekyllDev);
-	return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-	.on('close', done);
+	return run('jekyll build').exec();
+});
+
+gulp.task('clean', function (done) {
+	console.log("Cleaning project");
+	return run('npm run clean').exec();
+});
+
+gulp.task('clean:dist', function (done) {
+	return run('rm -rf dist/*').exec();
 });
 
 gulp.task('browser-sync', function() {
 	console.log("Syncronizing browser");
 	browsersync.init({
-		server: "_site",
+		server: "dist",
 		port: 3000
 	});
 });
@@ -78,12 +97,12 @@ gulp.task('todo', function () {
 
 gulp.task('build', function (callback) {
 		console.log("Running BUILD task");
-		return runsequence('lint:all', ['default', 'todo', 'build:all', 'jekyll', 'clean'], callback);
+		return runsequence('lint:all', ['test', 'default', 'todo', 'build:all', 'jekyll'], callback);
 });
 
 gulp.task('build:prod', function (callback) {
 		console.log("Running BUILD task for production");
-		return runsequence('lint:all', ['default', 'build:all', 'jekyll', 'html', 'clean'], callback);
+		return runsequence('default', ['clean:dist', 'build:all', 'jekyll', 'html', 'clean'], callback);
 });
 
 // All
@@ -95,7 +114,7 @@ gulp.task('lint:all', function (cb) {
 
 gulp.task('build:all', function (callback) {
 		console.log("Building all assets");
-		return runsequence('scss', ['css', 'js', 'img', 'html'], callback);
+		return runsequence('scss', ['css', 'js', 'img'], callback);
 });
 
 gulp.task('watch:multi', function (cb) {
@@ -107,20 +126,22 @@ gulp.task('watch:multi', function (cb) {
 
 gulp.task('html', function (callback) {
 		console.log("Running HTML task");
-		return runsequence('lint:html', ['minify:html'], callback);
+		return runsequence('minify:html', ['lint:html'], callback);
 });
 
 gulp.task('lint:html', function() {
-    return gulp.src('./**/*.html')
-        .pipe(htmlLint())
-        .pipe(htmlLint.format())
-        .pipe(htmlLint.failOnError());
+		return gulp.src('./**/*.html')
+				.pipe(count('## html-files selected'))
+				.pipe(htmlLint())
+				.pipe(htmlLint.format())
+				.pipe(htmlLint.failOnError());
 });
 
 gulp.task('minify:html', function() {
-	return gulp.src('_site/**/*.html')
+	return gulp.src('dist/**/*.html')
+		.pipe(count('## html-files selected'))
 		.pipe(htmlmin({collapseWhitespace: true}))
-		.pipe(gulp.dest('_site/'));
+		.pipe(gulp.dest('dist/'));
 });
 
 gulp.task('watch:html', function () {
@@ -143,6 +164,7 @@ gulp.task('watch:js', function () {
 gulp.task('lint:js', function () {
 		console.log("Linting JavaScript");
 		return gulp.src("./assets/js/**/*.js")
+				.pipe(count('## js-files selected'))
 				.pipe(jslint())
 				.pipe(jshint.reporter('default'));
 });
@@ -155,6 +177,10 @@ gulp.task('concat:js', function (callback) {
 gulp.task('concat:normal:js', function () {
 		console.log("Concatenating to non-minified js");
 		return gulp.src("./assets/js/**/*.js")
+				.pipe(count('## js-files selected'))
+				.pipe(babel({
+					presets: ['es2015']
+				}))
 				.pipe(concat('custom.js'))
 				.pipe(browsersync.reload({stream:true}))
 				.pipe(gulp.dest('./lib/custom/'));
@@ -163,6 +189,10 @@ gulp.task('concat:normal:js', function () {
 gulp.task('concat:min:js', function () {
 		console.log("Concatenating to minified js");
 		return gulp.src("./assets/js/**/*.js")
+				.pipe(count('## js-files selected'))
+				.pipe(babel({
+					presets: ['es2015']
+				}))
 				.pipe(concat('custom.min.js'))
 				.pipe(uglify())
 				.pipe(browsersync.reload({stream:true}))
@@ -196,7 +226,7 @@ gulp.task('beautify:css', function () {
 						autosemicolon: true
 				}))
 				.pipe(autoprefixer())
-				.pipe(cssComb())
+				.pipe(csscomb())
 				.pipe(browsersync.reload({stream:true}))
 				.pipe(gulp.dest('assets/css/'));
 });
@@ -232,6 +262,7 @@ gulp.task('watch:scss', function () {
 gulp.task('lint:scss', function () {
 		console.log("Linting SCSS");
 		return gulp.src('assets/scss/**/*.scss')
+				.pipe(count('## scss-files selected'))
 				.pipe(scsslint());
 });
 
@@ -239,6 +270,7 @@ gulp.task('compile:scss', function () {
 		console.log("Compiling normal SCSS files");
 		return sass('./assets/scss/**/*.scss')
 				.on('error', sass.logError)
+				.pipe(count('## scss-files selected'))
 				.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 				.pipe(browsersync.reload({stream:true}))
 				.pipe(gulp.dest('assets/css/'));
@@ -248,7 +280,6 @@ gulp.task('compile:custom:scss', function () {
 		console.log("Compiling custom SCSS file");
 		return sass('./assets/scss/style.scss')
 				.on('error', sass.logError)
-				.pipe(count('## scss-files selected'))
 				.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
 				.pipe(browsersync.reload({stream:true}))
 				.pipe(gulp.dest('lib/custom/'))
@@ -259,7 +290,7 @@ gulp.task('compile:custom:scss', function () {
 
 gulp.task('img', function (callback) {
 		console.log("Running IMG task");
-		return runsequence('minify:img', [], callback);
+		return runsequence('minify:img');
 });
 
 gulp.task('watch:img', function () {
@@ -271,9 +302,30 @@ gulp.task('minify:img', function () {
 		console.log("Minifying IMG");
 		return gulp.src('./assets/img/**/')
 				.pipe(count('## img-files selected'))
-				.pipe(imageMin({
+				.pipe(imagemin({
 						optimizationLevel: 9
 				}))
 				.pipe(browsersync.reload({stream:true}))
 				.pipe(gulp.dest('lib/custom/img/'));
 });
+
+
+// UTIL
+
+function runKarma(configFilePath, options, cb) {
+
+	configFilePath = path.resolve(configFilePath);
+
+	var server = karma.server;
+	var config = karmaParseConfig(configFilePath, {});
+
+		Object.keys(options).forEach(function(key) {
+			config[key] = options[key];
+		});
+
+	server.start(config, function(exitCode) {
+		console.log('Karma has exited with ' + exitCode);
+		cb();
+		process.exit(exitCode);
+	});
+}
