@@ -1,15 +1,13 @@
 /*
 Error: Undefined variable: "$font".
-        on line 2 of assets/scss/elements/braces.elements.scss
-        from line 3 of ./assets/scss/elements/elements.scss
+        on line 2 of ./assets/scss/elements/braces.elements.scss
 
-1: @import 
-2: 'bg-block.elements',
-3: 'braces.elements';
+1: .braces {
+2:   font-size: $font + 5px;
+3: }
 
 Backtrace:
-assets/scss/elements/braces.elements.scss:2
-./assets/scss/elements/elements.scss:3
+./assets/scss/elements/braces.elements.scss:2
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/script/tree/operation.rb:64:in `_perform'
@@ -26,19 +24,6 @@ assets/scss/elements/braces.elements.scss:2
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
-/home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
 /home/joaomarcuslf/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
@@ -75,4 +60,4 @@ assets/scss/elements/braces.elements.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$font\".\A         on line 2 of assets/scss/elements/braces.elements.scss\A         from line 3 of ./assets/scss/elements/elements.scss\A \A 1: @import \A 2: 'bg-block.elements',\A 3: 'braces.elements';"; }
+  content: "Error: Undefined variable: \"$font\".\A         on line 2 of ./assets/scss/elements/braces.elements.scss\A \A 1: .braces {\A 2:   font-size: $font + 5px;\A 3: }"; }
