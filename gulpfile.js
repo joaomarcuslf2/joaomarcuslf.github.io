@@ -51,7 +51,7 @@ gulp.task('default', function () {
 
 gulp.task('dev', function(cb) {
     gutil.log("Running Development Enviroment");
-    return multiprocess(['tdd', 'browser-sync', 'watch:all'], cb);
+    return multiprocess(['browser-sync', 'tdd'], cb);
 });
 
 gulp.task('test', function (cb) {
@@ -112,7 +112,7 @@ gulp.task('build:all', function (callback) {
 
 gulp.task('watch:multi', function (cb) {
     gutil.log("Watching all assets multi threaded");
-    return multiprocess(['watch:scss', 'watch:css', 'watch:js'], cb);
+    return multiprocess(['watch:scss', 'watch:css', 'watch:js', 'watch:img'], cb);
 });
 
 gulp.task('watch:all', function () {
@@ -147,7 +147,7 @@ gulp.task('lint:js', function () {
     return gulp.src("./assets/js/**/*.js")
         .pipe(count('## js-files selected'))
         .pipe(jslint())
-        .pipe(jshint.reporter('stylish'));
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('concat:js', function (callback) {

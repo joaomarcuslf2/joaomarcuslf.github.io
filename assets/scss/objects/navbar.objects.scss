@@ -1,4 +1,33 @@
-.logo-img {
-  height: 40px;
-  width: 30px;
+.navbar {
+	background: $primary-color;
+	color: $secondary-color;
+	font-size: $font-size;
+	transition: all 0.6s ease-out;
+
+	a {
+		color: $secondary-color;
+
+		&:hover {
+			color: $primary-color;
+		}
+	}
+	.navbar-brand {
+		font-size: $font-size + 5px;
+		&:hover {
+			color: $secondary-color;	
+			text-decoration: underline;		
+		}
+	}
+
+	.navbar-toggle {
+		border-color: $secondary-color;
+		.icon-bar {
+			background: $secondary-color;
+			border-color: $secondary-color;
+		}
+	}
+}
+
+.navbar-transluscide {
+	opacity: .8;
 }
