@@ -8,9 +8,9 @@ angular
 	        } else if($location.$$path === '/about') {
 						$rootScope.pageTitle = "About"
 	        	$rootScope.page = 'about';
-	        } else if($location.$$path === '/portifolio') {
-	        	$rootScope.pageTitle = "Portifolio"
-	        	$rootScope.page = 'portifolio';
+	        } else if($location.$$path === '/portfolio') {
+	        	$rootScope.pageTitle = "Portfolio"
+	        	$rootScope.page = 'portfolio';
 	        } else if($location.$$path === '/404') {
 	        	$rootScope.pageTitle = "404"
 	        	$rootScope.page = 'error';
