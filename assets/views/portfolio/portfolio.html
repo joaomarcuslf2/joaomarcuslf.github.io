@@ -1,0 +1,33 @@
+<section class="portifolio">
+	<div class="row text-center">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading"><strong>Some of my work:</strong></div>
+				<div class="panel-body">
+					<table class="table table-striped" ng-if="portfolioItens">
+						<thead>
+							<tr>
+								<td>
+									<div class="col-md-6"></div>
+									<strong class="col-md-3">Name:</strong>
+									<strong class="col-md-3">Link:</strong>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in portfolioItens">
+								<td class="row">
+									<img class="col-md-6" width="240" ng-src="/lib/custom/img/portfolio/{{item.img}}" alt="{{itm.label}}">
+									<strong class="col-md-3">{{item.label}}</strong>
+									<a class="col-md-3" href="{{item.link}}">Github</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</section>
+	<br><br><br><br>

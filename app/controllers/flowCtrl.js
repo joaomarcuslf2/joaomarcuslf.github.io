@@ -9,8 +9,8 @@ angular
 	    else if(newValue === 'about') {
 	    	$scope.about = true;
 	    }
-	    else if(newValue === 'portifolio') {
-	    	$scope.portifolio = true;
+	    else if(newValue === 'portfolio') {
+	    	$scope.portfolio = true;
 	    }
 	    else if(newValue === 'error') {
 	    	$scope.error = true;
@@ -20,7 +20,7 @@ angular
 	  function setHide() {
 	  	$scope.home = false;
 	  	$scope.about = false;
-	  	$scope.portifolio = false;
+	  	$scope.portfolio = false;
 	  	$scope.error = false;
 	  }
 	}]);
