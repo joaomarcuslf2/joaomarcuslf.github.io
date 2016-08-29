@@ -152,7 +152,25 @@ gulp.task('lint:js', function () {
 
 gulp.task('concat:js', function (callback) {
     gutil.log("Concatenating JS files");
-    return runsequence(['concat:normal:js', 'concat:min:js'], callback);
+    return runsequence(['concat:normal:js', 'concat:min:js', 'concat:app:js'], callback);
+});
+
+gulp.task('concat:app:js', function (callback) {
+    gutil.log("Concatenating JS files");
+    return runsequence(['concat:controllers'], callback);
+});
+
+gulp.task('concat:controllers', function () {
+    gutil.log("Concatenating to non-minified js");
+    return gulp.src("./app/controllers/**/*.js")
+        .pipe(count('## js-files selected'))
+        .pipe(babel({
+          presets: ['es2015']
+        }))
+        .pipe(concat('controllers.js'))
+        .pipe(uglify())
+        .pipe(browsersync.reload({stream:true}))
+        .pipe(gulp.dest('./lib/app/'));
 });
 
 gulp.task('concat:normal:js', function () {
