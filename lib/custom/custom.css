@@ -6,12 +6,20 @@
             box-sizing: border-box; }
 
 body {
-  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: #f0f0e6; }
+
+.profile-image {
+  background: #002416;
+  border: #002416 1px solid;
+  -webkit-border-radius: 180px;
+          border-radius: 180px; }
 
 .navbar {
   background: #002416;
   color: #f0f0e6;
   font-size: 18px;
+  border-bottom: 3px solid #006348 !important;
   -webkit-transition: all 0.6s ease-out;
   transition: all 0.6s ease-out; }
   .navbar a {
@@ -36,6 +44,7 @@ body {
   background: #002416;
   color: #f0f0e6;
   font-size: 18px;
+  border-top: 3px solid #006348 !important;
   opacity: .8;
   height: 90px;
   position: fixed;
@@ -53,3 +62,11 @@ body {
 
 .content-area {
   margin-top: 55px; }
+
+.home {
+  background-color: transparent !important; }
+
+.home {
+  background-color: transparent !important; }
+  .home .presentation-paragraph {
+    text-indent: 15px; }

@@ -12,6 +12,15 @@
 body
 {
     font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+    background: #f0f0e6;
+}
+
+.profile-image
+{
+    border: #002416 1px solid;
+    border-radius: 180px;
+    background: #002416;
 }
 
 .navbar
@@ -22,6 +31,7 @@ body
             transition: all .6s ease-out;
 
     color: #f0f0e6;
+    border-bottom: 3px solid #006348 !important;
     background: #002416;
 }
 
@@ -76,6 +86,7 @@ body
 
     opacity: .8;
     color: #f0f0e6;
+    border-top: 3px solid #006348 !important;
     background: #002416;
 }
 
@@ -95,4 +106,19 @@ body
 .content-area
 {
     margin-top: 55px;
+}
+
+.home
+{
+    background-color: transparent !important;
+}
+
+.home
+{
+    background-color: transparent !important;
+}
+
+.home .presentation-paragraph
+{
+    text-indent: 15px;
 }

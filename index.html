@@ -14,49 +14,36 @@
 		<meta name="language" content="en">
 
 		<title>@joaomarcuslf - {{pageTitle}}</title>
-		<link rel="icon" href="/lib/custom/img/logo.png">
+		<link rel="icon" href="/lib/custom/img/logo-hex.png">
 
 		<link rel="stylesheet" href="/lib/custom/custom.css">
 		<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.min.css">
 		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	</head>
-	<body>
+	<body ng-controller="flowController">
+		<nav class="navbar navbar-fixed-top">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">@joaomarcuslf</a>
+		    </div>
+		    <div id="navbar" class="navbar-collapse collapse text-center">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#/home">Home</a></li>
+		        <li><a href="#/about">About</a></li>
+		        <li><a href="#/portifolio">Portifolio</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
 
-    <nav class="navbar navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">@joaomarcuslf</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Link1</a></li>
-            <li><a href="#">Link2</a></li>
-            <li><a href="#">Link3</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-		<div class="container content-area">      
-      <div class="jumbotron">
-        <h1>Hello World</h1>
-        <p>Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.</p>
-        <p>Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.</p>
-        <p>Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.</p>
-        <p>Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.</p>
-        <p>Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.Hello World Again.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="#" role="button">Nothing Here</a>
-        </p>
-      </div>
-    </div>
+    <ng-include src="'./assets/views/sections.html'"></ng-include>
 
     <footer class="footer">
     	<div class="container">
@@ -93,6 +80,10 @@
 		<!-- APP INIT -->
 			<!-- APP -->
 				<script src="/app/app.js"></script>
+			<!-- Config -->
+				<script src="/app/config/run.js"></script>
+			<!-- Controllers -->
+				<script src="/app/controllers/flowCtrl.js"></script>
 
 		<!-- APP END -->
 	</body>
