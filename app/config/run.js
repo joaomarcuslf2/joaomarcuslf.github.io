@@ -13,7 +13,7 @@ angular
 	        	$rootScope.page = 'portifolio';
 	        } else if($location.$$path === '/404') {
 	        	$rootScope.pageTitle = "404"
-	        	$rootScope.page = '404';
+	        	$rootScope.page = 'error';
 	        } else {
 	        	$location.path("/404");
 	        }
