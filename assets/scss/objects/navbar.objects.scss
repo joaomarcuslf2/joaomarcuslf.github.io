@@ -27,6 +27,10 @@
 			border-color: $secondary-color;
 		}
 	}
+
+	.active-tab {
+		border-bottom:  2px #00ECA9 solid;
+	}
 }
 
 .navbar-transluscide {
