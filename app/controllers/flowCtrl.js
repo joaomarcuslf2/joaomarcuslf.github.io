@@ -1,7 +1,7 @@
 angular
 	.module('joaomarcuslfWebApp')
 	.controller('flowController', ['$scope', '$rootScope', function ($scope, $rootScope) {
-		$rootScope.$watch('page', function(newValue, oldValue) {
+		$rootScope.$watch('page', (newValue, oldValue) => {
 			setHide()
 	    if(newValue === 'home') {
 	    	$scope.home = true;
@@ -17,7 +17,7 @@ angular
 	    }
 	  });
 
-	  function setHide() {
+	  let setHide = () => {
 	  	$scope.home = false;
 	  	$scope.about = false;
 	  	$scope.portfolio = false;

@@ -1,1 +1,1 @@
-angular.module('joaomarcuslfWebApp', []);
+const app = angular.module('joaomarcuslfWebApp', []);
