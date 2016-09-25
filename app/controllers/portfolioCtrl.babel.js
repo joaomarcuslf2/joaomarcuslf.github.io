@@ -1,6 +1,6 @@
 angular
 	.module('joaomarcuslfWebApp')
-	.controller('portfolioController', ['$scope', function ($scope) {
+	.controller('portfolioController', ['$scope', ($scope) => {
 		$scope.portfolioItens  = [
 			{
 				img: 'banner-alien.jpeg',

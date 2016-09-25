@@ -36,6 +36,8 @@ body {
     .navbar .navbar-toggle .icon-bar {
       background: #f0f0e6;
       border-color: #f0f0e6; }
+  .navbar .active-tab {
+    border-bottom: 2px #00ECA9 solid; }
 
 .navbar-transluscide {
   opacity: .8; }
