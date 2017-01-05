@@ -34,6 +34,7 @@ module.exports = {
         { test: [/\.js$/, /\.es6$/], exclude: /node_modules/, loader: 'eslint' }
     ],
     loaders: [
+      { test: /\.json$/, loader: 'json' },
       {
         test: [/\.js$/, /\.es6$/],
         exclude: /node_modules/,

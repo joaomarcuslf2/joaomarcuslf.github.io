@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "bulma": "^0.2.3",
+    "json-loader": "^0.5.4",
     "whatwg-fetch": "^2.0.1"
   }
 }

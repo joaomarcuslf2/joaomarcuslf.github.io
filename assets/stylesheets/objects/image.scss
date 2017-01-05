@@ -16,4 +16,15 @@
 			max-height: 258px;
 		}
 	}
+
+	&.profile-image {
+		overflow: hidden;
+		* {
+			width: 350px;
+    	height: 350px;
+			overflow: hidden !important;
+			background: $turquoise;
+			border-radius: 100%;
+		}
+	}
 }
