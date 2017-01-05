@@ -5,8 +5,15 @@
 */
 
 /*
+  Overwrite Bulma's variables
+*/
+
+$turquoise: #009688;
+
+/*
   Importing Bulma in the top level of the application
 */
+
 @import '../../node_modules/bulma/bulma';
 
 /*

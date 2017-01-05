@@ -53,6 +53,8 @@ http.createServer((request, response) => {
             response.setHeader('Access-Control-Allow-Methods', 'GET');
             response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
             response.setHeader('Access-Control-Allow-Credentials', true);
+            response.setHeader('Accept-Ranges', 'bytes');
+            response.setHeader('Cache-Control', 'no-cache');
             response.writeHead(200, { 'Content-Type': contentType });
             response.end(content, 'utf-8');
         }

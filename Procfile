@@ -1,3 +1,4 @@
 server: npm run server
-assets: gulp watch:assets
+assetScss: gulp watch:scss
+assetImgs: gulp watch:img
 webpack: npm run watch:js

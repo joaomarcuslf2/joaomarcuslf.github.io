@@ -1,0 +1,36 @@
+.open-btn {
+	display: none;
+	position: relative;
+  left: calc(100% - 50px);
+	background: transparent;
+	border: transparent;
+	border-radius: 100%;
+
+	div.btn-holder {
+		height: 40px;
+		width: 40px;
+	}
+}
+
+.open-btn {
+	div.btn-holder {
+		background: url(../img/icons/right-icon.png);
+		background-size: cover;
+	}
+}
+
+.open {
+	.open-btn {
+		div.btn-holder {
+			background: url(../img/icons/left-icon.png);
+			background-size: cover;
+		}
+	}
+}
+
+@media (min-width : 768px) and (max-width : 1024px) {
+	/* Tablet */
+	.open-btn {
+		display: block;
+	}
+}

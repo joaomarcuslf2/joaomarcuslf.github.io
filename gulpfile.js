@@ -45,7 +45,7 @@ gulp.task('bundle:scss', () => {
   }))
   .pipe(cssComb())
   .pipe(concat('bundle.css'))
-  .pipe(gulp.dest('./build/'));
+  .pipe(gulp.dest('./build/css/'));
 });
 
 // Watchers
@@ -62,7 +62,7 @@ gulp.task('watch:scss', () => {
 
 gulp.task('watch:img', () => {
     gutil.log("Watching IMG modifications");
-    gulp.watch('assets/img/**/*.*', ['bundle:img']);
+    gulp.watch('assets/images/**/*.*', ['bundle:img']);
 });
 
 // Build

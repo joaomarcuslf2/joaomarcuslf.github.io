@@ -1,0 +1,19 @@
+.image {
+	img {
+		margin: 0 auto;
+	}
+
+	&.is-circle {
+		img {
+			border-radius: 100%;
+			border: 2px white solid;
+		}
+	}
+
+	&.is-256x256 {
+		img {
+			max-width: 258px;
+			max-height: 258px;
+		}
+	}
+}

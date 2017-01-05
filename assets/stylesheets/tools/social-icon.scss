@@ -1,0 +1,8 @@
+@mixin social-icons($mediaName) {
+	height: 32px;
+	width: 32px;
+	background: url('../img/icons/#{$mediaName}-icon.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 100%;
+}
