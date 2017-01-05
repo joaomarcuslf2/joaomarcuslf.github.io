@@ -1,5 +1,17 @@
 import 'whatwg-fetch';
 
+function closeNavigation() {
+	let navigation = document.querySelector('.navigation');
+	let openNavBtn = document.querySelector('.open-nav-btn');
+	let overlay = document.querySelector('#overlay');
+	let appContainer = document.getElementById('appContainer');
+
+	navigation.className = navigation.className.split(' open-nav').join('');
+	openNavBtn.className = openNavBtn.className.split(' is-open').join('');
+	appContainer.className = 'open';
+	overlay.className = '';
+}
+
 function toggleSideBarMenu() {
 	let appContainer = document.getElementById('appContainer');
 
@@ -11,15 +23,18 @@ function toggleSideBarMenu() {
 }
 
 function toggleNavigation() {
-	let appContainer = document.querySelector('.navigation');
+	let navigation = document.querySelector('.navigation');
 	let openNavBtn = document.querySelector('.open-nav-btn');
+	let overlay = document.querySelector('#overlay');
+	let appContainer = document.getElementById('appContainer');
 
-	if (appContainer.className.includes('open-nav')) {
-		appContainer.className = appContainer.className.split(' open-nav').join('');
-		openNavBtn.className = openNavBtn.className.split(' is-open').join('');
+	if (navigation.className.includes('open-nav')) {
+		closeNavigation();
 	} else {
-		appContainer.className += ' open-nav';
+		navigation.className += ' open-nav';
 		openNavBtn.className += ' is-open';
+		overlay.className = 'open overlay open-overlay no-overflow';
+		appContainer.className += ' ' + overlay.className;
 
 		openNavBtn.blur();
 	}
@@ -33,6 +48,14 @@ document
 document
 	.querySelector('.open-nav-btn')
 	.addEventListener('click', toggleNavigation, false);
+
+document
+	.querySelector('#overlay')
+	.addEventListener('click', closeNavigation, false);
+
+document
+	.querySelectorAll('.link-item')
+	.forEach((element) => element.addEventListener('click', closeNavigation, false));
 
 import portfolioItens from './portfolio.json';
 let portfolioContainer = document.querySelector('.portfolio-container');

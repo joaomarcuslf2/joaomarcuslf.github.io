@@ -61,6 +61,18 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function closeNavigation() {
+		var navigation = document.querySelector('.navigation');
+		var openNavBtn = document.querySelector('.open-nav-btn');
+		var overlay = document.querySelector('#overlay');
+		var appContainer = document.getElementById('appContainer');
+
+		navigation.className = navigation.className.split(' open-nav').join('');
+		openNavBtn.className = openNavBtn.className.split(' is-open').join('');
+		appContainer.className = 'open';
+		overlay.className = '';
+	}
+
 	function toggleSideBarMenu() {
 		var appContainer = document.getElementById('appContainer');
 
@@ -72,15 +84,18 @@
 	}
 
 	function toggleNavigation() {
-		var appContainer = document.querySelector('.navigation');
+		var navigation = document.querySelector('.navigation');
 		var openNavBtn = document.querySelector('.open-nav-btn');
+		var overlay = document.querySelector('#overlay');
+		var appContainer = document.getElementById('appContainer');
 
-		if (appContainer.className.includes('open-nav')) {
-			appContainer.className = appContainer.className.split(' open-nav').join('');
-			openNavBtn.className = openNavBtn.className.split(' is-open').join('');
+		if (navigation.className.includes('open-nav')) {
+			closeNavigation();
 		} else {
-			appContainer.className += ' open-nav';
+			navigation.className += ' open-nav';
 			openNavBtn.className += ' is-open';
+			overlay.className = 'open overlay open-overlay no-overflow';
+			appContainer.className += ' ' + overlay.className;
 
 			openNavBtn.blur();
 		}
@@ -89,6 +104,12 @@
 	document.querySelector('.open-btn').addEventListener('click', toggleSideBarMenu, false);
 
 	document.querySelector('.open-nav-btn').addEventListener('click', toggleNavigation, false);
+
+	document.querySelector('#overlay').addEventListener('click', closeNavigation, false);
+
+	document.querySelectorAll('.link-item').forEach(function (element) {
+		return element.addEventListener('click', closeNavigation, false);
+	});
 
 	var portfolioContainer = document.querySelector('.portfolio-container');
 

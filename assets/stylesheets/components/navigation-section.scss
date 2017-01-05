@@ -7,8 +7,9 @@
 		float: left;
 		margin-right: 10px;
 
-		.hero {
-			height: 500px;
+		.hero.is-primary {
+			height: 100vh;
+			overflow-y: auto;
 		}
 
 		.menu-list {
