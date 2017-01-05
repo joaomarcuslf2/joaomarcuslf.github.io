@@ -33,3 +33,28 @@ document
 document
 	.querySelector('.open-nav-btn')
 	.addEventListener('click', toggleNavigation, false);
+
+import portfolioItens from './portfolio.json';
+let portfolioContainer = document.querySelector('.portfolio-container');
+
+
+portfolioItens.items.map((item) => {
+	let img = document.createElement('img');
+	let figure = document.createElement('figure');
+	let label = document.createElement('h2');
+	let p = document.createElement('p');
+	let referenceLink = document.createElement('a');
+
+	img.src = '/build/img/portfolio/' + item.img;
+	figure.className = 'image is-16by9 portfolio-image';
+	p.className = 'panel-block';
+	label.innerText = item.label;
+	referenceLink.href = item.link;
+	referenceLink.className = 'button is-primary is-outlined is-medium	is-fullwidth';
+
+	figure.append(img);
+	referenceLink.append(label);
+	p.append(referenceLink, figure);
+
+	portfolioContainer.append(p);
+});

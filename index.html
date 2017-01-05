@@ -21,6 +21,7 @@
 	<body>
 		<div id="appContainer" class="open">
 			<aside class="navigation-section">
+				<span id="home"></span>
 				<div class="hero is-primary is-bold">
 					<div class="hero-body">
 						<div class="container">
@@ -51,11 +52,12 @@
 												Navigation:
 											</p>
 											<ul class="menu-list">
-												<li class="list-item"><a href="#">Home</a></li>
-												<li class="list-item"><a href="#">About</a></li>
-												<li class="list-item"><a href="#">Portfolio</a></li>
+												<li class="list-item"><a href="#home">Home</a></li>
+												<li class="list-item"><a href="#about">About</a></li>
+												<li class="list-item"><a href="#portfolio">Portfolio</a></li>
 											</ul>
 										</div>
+										<br />>
 										<div class="container social-media">
 											<div class="columns is-mobile is-gapless social-content">
 												<div class="column">
@@ -83,13 +85,81 @@
 				</div>
 			</aside>
 
+
 			<div class="container content-container">
+
+				<span id="about"></span>
+
+				<h1 class="title is-fullwidth has-text-centered">
+					Hi, I'm João Marcus Fernandes
+				</h1>
+
+				<figure class="container image is-circle profile-image is-primary is-bold has-text-centered">
+					<object type="image/svg+xml" data="/build/img/joaomarcuslf-coffee.svg">
+						<img src="/build/img/joaomarcuslf-coder.png" alt="Joaomarcuslf coding">
+					</object>
+				</figure>
+
+				<div class="content about-me">
+					<h2 class="title has-text-centered"><strong>About me:</strong></h2>
+					<p class="subtitle">
+						I'm João Marcus Fernandes, Web-Developer.
+						Focused on Front-end development and UX/UI Design.
+						Right now studying Analysis and development of systems(Computer Science Branch) on Faeterj-RIO,
+						graduated on Computer Graphics.
+						Linux lover, casual player, hardcore reader, chocoholic and coffeeholic.
+					</p>
+				</div>
+
+				<br />
+				<hr />
+				<br />
+
+				<div class="has-text-centered">
+					<a href="https://github.com/joaomarcuslf/ABOUT-ME" target="_blank">
+						<button class="button is-medium is-primary is-bold">
+								More about me
+						</button>
+					</a>
+				</div>
+
+				<br />
+				<hr />
+				<br />
+
+				<div class="panel container">
+					<p class="panel-heading"><strong>Main Knowledges</strong></p>
+					<p class="panel-block">
+						JavaScript
+					</p>
+					<p class="panel-block">
+						Ruby
+					</p>
+					<p class="panel-block">
+						HTML
+					</p>
+					<p class="panel-block">
+						CSS
+					</p>
+					<p class="panel-block">
+						UX/UI Design
+					</p>
+				</div>
+
+				<br />
+				<hr />
+				<br />
+
+				<span id="portfolio"></span>
+
+				<div class="panel container portfolio-container">
+					<p class="panel-heading"><strong>Projects</strong></p>
+				</div>
 			</div>
 		</div>
 
 		<!-- APP INIT -->
 				<script src="/build/js/bundle.js" defer></script>
 		<!-- APP END -->
-		<script src="http://192.168.0.15:8080/target/target-script-min.js#anonymous"></script>
 	</body>
 </html>
