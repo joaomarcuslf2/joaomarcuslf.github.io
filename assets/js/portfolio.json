@@ -1,34 +1,52 @@
 {
 	"items": [
 			{
+				"img": "react-layout-test.jpeg",
+				"label": "React Layout test",
+				"link": "https://github.com/joaomarcuslf/react-layout-test",
+				"description": "React layout using Flux arch, and ITCSS with flexbox and SCSS for responsive layout"
+			},
+			{
+				"img": "github-react-api.jpeg",
+				"label": "Githup React API",
+				"link": "https://github.com/joaomarcuslf/github-react-api",
+				"description": "React Client consuming the Github API using Flux arch, ITCSS, Flexbox and tests with Mocha"
+			},
+			{
 				"img": "banner-alien.jpeg",
 				"label": "OuterWorldCodes",
-				"link": "https://github.com/joaomarcuslf/my-personal-webapp"
+				"link": "https://github.com/joaomarcuslf/my-personal-webapp",
+				"description": "Personal Web application using Rails and CSS trasitions"
 			},
 			{
 				"img": "fastformater.png",
 				"label": "FastFormater Gem",
-				"link": "https://github.com/joaomarcuslf/fast_formater"
+				"link": "https://github.com/joaomarcuslf/fast_formater",
+				"description": "Simple Json and XML formatter made with Ruby"
 			},
 			{
 				"img": "fileminer.png",
 				"label": "FileMiner",
-				"link": "https://github.com/joaomarcuslf/file-mining"
+				"link": "https://github.com/joaomarcuslf/file-mining",
+				"description": "File reader and fetcher using Ruby and Rspec"
 			},
 			{
 				"img": "gemlist.png",
 				"label": "Gem List",
-				"link": "https://github.com/joaomarcuslf/data_struct_list"
+				"link": "https://github.com/joaomarcuslf/data_struct_list",
+				"description": "Data-structure implemantation using Ruby and Rspec"
 			},
 			{
 				"img": "hellslist.png",
 				"label": "Hell's list",
-				"link": "https://github.com/joaomarcuslf/sexta-feira-13"
+				"link": "https://github.com/joaomarcuslf/sexta-feira-13",
+				"description": "Complex dynamic allocation data-structure project made with C"
 			},
 			{
 				"img": "todoapp.png",
 				"label": "Todo App",
-				"link": "https://github.com/joaomarcuslf/my-todo-list"
+				"link": "https://github.com/joaomarcuslf/my-todo-list",
+				"description": "Simple Todo List made with Rails"
 			}
 		]
 }

@@ -1,4 +1,3 @@
-import 'whatwg-fetch';
 import './pollyfils.js';
 
 function closeNavigation() {
