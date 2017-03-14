@@ -2,7 +2,7 @@
 	"items": [
 			{
 				"img": "rasp-monitor-bot.png",
-				"label": "Telegram Bot for Raspberry Monitoring",
+				"label": "Raspberry Monitoring Bot",
 				"link": "https://github.com/joaomarcuslf/rasp-monitor-bot",
 				"description": "Small Telegram Bot to monitor my Raspberry Pi built with Clojure"
 			},
