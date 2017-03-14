@@ -1,6 +1,12 @@
 {
 	"items": [
 			{
+				"img": "rasp-monitor-bot.png",
+				"label": "Telegram Bot for Raspberry Monitoring",
+				"link": "https://github.com/joaomarcuslf/rasp-monitor-bot",
+				"description": "Small Telegram Bot to monitor my Raspberry Pi built with Clojure"
+			},
+      {
 				"img": "react-layout-test.jpeg",
 				"label": "React Layout test",
 				"link": "https://github.com/joaomarcuslf/react-layout-test",
