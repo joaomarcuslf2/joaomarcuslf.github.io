@@ -7,6 +7,12 @@
 				"description": "Small Telegram Bot to monitor my Raspberry Pi built with Clojure"
 			},
 			{
+				"img": "rfid-node-reader.png",
+        "label": "RFID Reader",
+        "link": "https://github.com/joaomarcuslf/rfid-node-reader",
+        "description": "Simple implemantation to RFID scan with Node"
+			},
+			{
 				"img": "clojure-catalog-service.png",
 				"label": "Clojure Catalog Service",
 				"link": "https://github.com/joaomarcuslf/clojure-catalog-service",
