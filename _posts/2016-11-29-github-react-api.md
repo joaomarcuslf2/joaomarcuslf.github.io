@@ -1,0 +1,12 @@
+---
+layout: project
+image: github-react-api.jpeg
+title: Githup React API
+repo: https://github.com/joaomarcuslf/github-react-api
+description: React Client consuming the Github API using Flux arch, ITCSS, Flexbox and tests with Mocha
+categories:
+    - professional-app
+    - react
+    - javascript
+permalink: github-react-api/
+---
