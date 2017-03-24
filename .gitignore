@@ -18,7 +18,6 @@ deploy
 
 .nfs*
 
-_site/
 .jekyll-metadata
 
 *.gem
