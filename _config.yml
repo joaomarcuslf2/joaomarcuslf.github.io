@@ -1,0 +1,29 @@
+name: "@joaomarcuslf - Front-end Developer"
+description: "My Webpage"
+url: http://joaomarcuslf.github.io
+social:
+  github: joaomarcuslf
+  email: jmarcusfernandes@gmail.com
+  twitter: joaomarcuslf
+  medium: joaomarcuslf/
+  facebook: https://www.facebook.com/joaomarcus.l.fernandes
+  linkedin: https://www.linkedin.com/in/jo%C3%A3o-marcus-fernandes-4b8814ba
+permalink: /:title
+paginate: 5
+paginate_path: "/:num/"
+markdown: kramdown
+
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+
+exclude:
+  - Gemfile
+  - README.md
+  - gulpfile.js
+  - assets/
+  - package.json
+  - Procfile
+  - node_modules/
+  - webpack*
+  - yarn.lock
