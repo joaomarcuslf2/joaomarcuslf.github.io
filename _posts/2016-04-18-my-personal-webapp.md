@@ -10,3 +10,5 @@ categories:
     - scss
 permalink: my-personal-webapp/
 ---
+
+Almost all static page using a lot of CSS animations with a rails powered app.

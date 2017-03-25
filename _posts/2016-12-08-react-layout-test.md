@@ -10,3 +10,5 @@ categories:
     - javascript
 permalink: react-layout-test/
 ---
+
+Test proposal to recreate a responsive layout using react.

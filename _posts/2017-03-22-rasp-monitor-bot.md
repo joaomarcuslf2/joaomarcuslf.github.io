@@ -10,3 +10,5 @@ categories:
     - iot
 permalink: rasp-monitor-bot/
 ---
+
+Telegram bot built to monitos the raspberry pi and answer some commands, with owner validation to more complex commands.

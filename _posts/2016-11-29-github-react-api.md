@@ -10,3 +10,5 @@ categories:
     - javascript
 permalink: github-react-api/
 ---
+
+Test proposal to create an React application that consumes the github api and display the repositories ranked by stars, and show the commits too.

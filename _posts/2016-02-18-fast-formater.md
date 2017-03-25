@@ -9,3 +9,5 @@ categories:
     - ruby
 permalink: fast-formater/
 ---
+
+This is a dead simpĺe ruby gem to convert one-level Ruby Hashs into XML and JSON types of data.

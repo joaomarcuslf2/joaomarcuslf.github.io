@@ -9,3 +9,5 @@ categories:
     - ruby
 permalink: file-miner/
 ---
+
+This project is an implementation of file reading along with some data mining to count words using **Ruby** and **Rspec** for testing.
