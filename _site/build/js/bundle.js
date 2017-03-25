@@ -1,1 +1,179 @@
-!function(e){function t(a){if(o[a])return o[a].exports;var i=o[a]={exports:{},id:a,loaded:!1};return e[a].call(i.exports,i,i.exports,t),i.loaded=!0,i.exports}var o={};return t.m=e,t.c=o,t.p="/build/js",t(0)}([function(e,t,o){e.exports=o(1)},function(e,t,o){"use strict";function a(e){return e&&e.__esModule?e:{default:e}}o(2);var i=o(3),n=a(i),r=function(){var e=document.querySelector(".navigation"),t=document.querySelector(".open-nav-btn"),o=document.querySelector("#overlay"),a=document.getElementById("appContainer");e.className=e.className.split(" open-nav").join(""),t.className=t.className.split(" is-open").join(""),a.className="open",o.className=""},l=function(){var e=document.getElementById("appContainer");"open"===e.className?e.className="":e.className="open"},c=function(){var e=document.querySelector(".navigation"),t=document.querySelector(".open-nav-btn"),o=document.querySelector("#overlay"),a=document.getElementById("appContainer");e.className.includes("open-nav")?r():(e.className+=" open-nav",t.className+=" is-open",o.className="open overlay open-overlay no-overflow",a.className+=" "+o.className,t.blur())};document.querySelector(".open-btn").addEventListener("click",l,!1),document.querySelector(".open-nav-btn").addEventListener("click",c,!1),document.querySelector("#overlay").addEventListener("click",r,!1),document.querySelectorAll(".link-item").forEach(function(e){return e.addEventListener("click",r,!1)});var s=document.querySelector(".portfolio-container");n.default.items.forEach(function(e){var t=document.createElement("img"),o=document.createElement("figure"),a=document.createElement("h2"),i=document.createElement("p"),n=document.createElement("a");t.src="/build/img/portfolio/"+e.img,o.className="image is-16by9 portfolio-image",i.className="panel-block",a.innerText=e.label,n.href=e.link,n.className="button is-primary is-outlined is-medium is-fullwidth",o.append(t),n.append(a),i.append(n),i.append(o),s.append(i)})},function(e,t){"use strict";Array.prototype.map||(Array.prototype.map=function(e,t){var o=void 0,a=void 0,i=void 0;if(null==this)throw new TypeError(" this is null or not defined");var n=Object(this),r=n.length>>>0;if("function"!=typeof e)throw new TypeError(e+" is not a function");for(arguments.length>1&&(o=t),a=new Array(r),i=0;i<r;){var l=void 0,c=void 0;i in n&&(l=n[i],c=e.call(o,l,i,n),a[i]=c),i++}return a}),Array.prototype.forEach||(Array.prototype.forEach=function(e,t){for(var o=0,a=this.length;o<a;++o)e.call(t,this[o],o,this)}),NodeList.prototype.forEach||(NodeList.prototype.forEach=Array.prototype.forEach),Element.prototype.append||(Element.prototype.append=Element.prototype.appendChild)},function(e,t){e.exports={items:[{img:"rasp-monitor-bot.png",label:"Raspberry Monitoring Bot",link:"https://github.com/joaomarcuslf/rasp-monitor-bot",description:"Small Telegram Bot to monitor my Raspberry Pi built with Clojure"},{img:"rfid-node-reader.png",label:"RFID Reader",link:"https://github.com/joaomarcuslf/rfid-node-reader",description:"Simple implemantation to RFID scan with Node"},{img:"clojure-catalog-service.png",label:"Clojure Catalog Service",link:"https://github.com/joaomarcuslf/clojure-catalog-service",description:"Simple catalog API implementation"},{img:"clojure-rest-api.png",label:"Clojure REST Api",link:"https://github.com/joaomarcuslf/clojure-rest-api",description:"An Clojure REST Api built with ring"},{img:"react-layout-test.jpeg",label:"React Layout test",link:"https://github.com/joaomarcuslf/react-layout-test",description:"React layout using Flux arch, and ITCSS with flexbox and SCSS for responsive layout"},{img:"github-react-api.jpeg",label:"Githup React API",link:"https://github.com/joaomarcuslf/github-react-api",description:"React Client consuming the Github API using Flux arch, ITCSS, Flexbox and tests with Mocha"},{img:"rails-angularjs-app.png",label:"Angular and Rails Application",link:"https://github.com/joaomarcuslf/rails-angularjs-app",description:"Simple angularJS application powered by Rails Back-end"},{img:"banner-alien.jpeg",label:"OuterWorldCodes",link:"https://github.com/joaomarcuslf/my-personal-webapp",description:"Personal Web application using Rails and CSS trasitions"},{img:"fastformater.png",label:"FastFormater Gem",link:"https://github.com/joaomarcuslf/fast_formater",description:"Simple Json and XML formatter made with Ruby"},{img:"fileminer.png",label:"FileMiner",link:"https://github.com/joaomarcuslf/file-mining",description:"File reader and fetcher using Ruby and Rspec"},{img:"gemlist.png",label:"Gem List",link:"https://github.com/joaomarcuslf/data_struct_list",description:"Data-structure implemantation using Ruby and Rspec"},{img:"hellslist.png",label:"Hell's list",link:"https://github.com/joaomarcuslf/sexta-feira-13",description:"Complex dynamic allocation data-structure project made with C"},{img:"todoapp.png",label:"Todo App",link:"https://github.com/joaomarcuslf/my-todo-list",description:"Simple Todo List made with Rails"}]}}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/build/js";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(1);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(2);
+
+	var closeNavigation = function closeNavigation() {
+	  var navigation = document.querySelector('.navigation');
+	  var openNavBtn = document.querySelector('.open-nav-btn');
+	  var overlay = document.querySelector('#overlay');
+	  var appContainer = document.getElementById('appContainer');
+
+	  navigation.className = navigation.className.split(' open-nav').join('');
+	  openNavBtn.className = openNavBtn.className.split(' is-open').join('');
+	  appContainer.className = 'open';
+	  overlay.className = '';
+	};
+
+	var toggleSideBarMenu = function toggleSideBarMenu() {
+	  var appContainer = document.getElementById('appContainer');
+
+	  if (appContainer.className === 'open') {
+	    appContainer.className = '';
+	  } else {
+	    appContainer.className = 'open';
+	  }
+	};
+
+	var toggleNavigation = function toggleNavigation() {
+	  var navigation = document.querySelector('.navigation');
+	  var openNavBtn = document.querySelector('.open-nav-btn');
+	  var overlay = document.querySelector('#overlay');
+	  var appContainer = document.getElementById('appContainer');
+
+	  if (navigation.className.includes('open-nav')) {
+	    closeNavigation();
+	  } else {
+	    navigation.className += ' open-nav';
+	    openNavBtn.className += ' is-open';
+	    overlay.className = 'open overlay open-overlay no-overflow';
+	    appContainer.className += ' ' + overlay.className;
+
+	    openNavBtn.blur();
+	  }
+	};
+
+	document.querySelector('.open-btn').addEventListener('click', toggleSideBarMenu, false);
+
+	document.querySelector('.open-nav-btn').addEventListener('click', toggleNavigation, false);
+
+	document.querySelector('#overlay').addEventListener('click', closeNavigation, false);
+
+	document.querySelectorAll('.link-item').forEach(function (element) {
+	  return element.addEventListener('click', closeNavigation, false);
+	});
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/* eslint no-tabs: 0 */
+	/* eslint indent: 0 */
+	/* eslint no-undef: 0 */
+	/* eslint no-plusplus: 0 */
+	/* eslint prefer-template: 0 */
+	/* eslint prefer-const: 0 */
+	/* eslint one-var: 0 */
+	/* eslint no-extend-native: 0 */
+	/* eslint func-names: 0 */
+	/* eslint one-var-declaration-per-line: 0 */
+	/* eslint no-bitwise: 0 */
+	/* eslint space-in-parens: 0 */
+	/* eslint keyword-spacing: 0 */
+	/* eslint space-before-function-paren: 0 */
+
+	if (!Array.prototype.map) {
+	  Array.prototype.map = function (callback, thisArg) {
+	    var T = void 0,
+	        A = void 0,
+	        k = void 0;
+	    if (this == null) {
+	      throw new TypeError(' this is null or not defined');
+	    }
+	    var O = Object(this);
+	    var len = O.length >>> 0;
+	    if (typeof callback !== 'function') {
+	      throw new TypeError(callback + ' is not a function');
+	    }
+	    if (arguments.length > 1) {
+	      T = thisArg;
+	    }
+	    A = new Array(len);
+	    k = 0;
+	    while (k < len) {
+	      var kValue = void 0,
+	          mappedValue = void 0;
+	      if (k in O) {
+	        kValue = O[k];
+	        mappedValue = callback.call(T, kValue, k, O);
+	        A[k] = mappedValue;
+	      }
+	      k++;
+	    }
+
+	    return A;
+	  };
+	}
+
+	if (!Array.prototype.forEach) {
+	  Array.prototype.forEach = function (fn, scope) {
+	    for (var i = 0, len = this.length; i < len; ++i) {
+	      fn.call(scope, this[i], i, this);
+	    }
+	  };
+	}
+
+	if (!NodeList.prototype.forEach) {
+	  NodeList.prototype.forEach = Array.prototype.forEach;
+	}
+
+	if (!Element.prototype.append) {
+	  Element.prototype.append = Element.prototype.appendChild;
+	}
+
+/***/ }
+/******/ ]);

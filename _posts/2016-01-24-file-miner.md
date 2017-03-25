@@ -1,7 +1,7 @@
 ---
 layout: project
 image: fileminer.png
-title: FileMiner",
+title: FileMiner
 repo: https://github.com/joaomarcuslf/file-mining
 description: File reader and fetcher using Ruby and Rspec
 categories:
