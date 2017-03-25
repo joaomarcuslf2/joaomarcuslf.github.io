@@ -33,15 +33,15 @@ gulp.task('bundle:scss', () => {
   .pipe(cssBeautify({
     indent: '  ',
     openbrace: 'separate-line',
-    autosemicolon: true
+    autosemicolon: true,
   }))
   .pipe(autoprefixer({
     browsers: [
       '> 5%',
       'IE 7',
-      'last 5 versions'
+      'last 5 versions',
     ],
-    cascade: false
+    cascade: false,
   }))
   .pipe(cssComb())
   .pipe(concat('bundle.css'))
@@ -61,20 +61,17 @@ gulp.task('watch:scss', () => {
 });
 
 gulp.task('watch:img', () => {
-    gutil.log("Watching IMG modifications");
-    gulp.watch('assets/images/**/*.*', ['bundle:img']);
+  gutil.log('Watching IMG modifications');
+  gulp.watch('assets/images/**/*.*', ['bundle:img']);
 });
 
 // Build
 
 gulp.task('run:build', ['build:js', 'build:scss', 'minify:img'], () => {});
 
-gulp.task('build:js', () => {
-  return exec('npm run build:js');
-});
+gulp.task('build:js', () => exec('npm run build:js'));
 
-gulp.task('build:scss', () => {
-  return gulp.src('./assets/stylesheets/main.scss')
+gulp.task('build:scss', () => gulp.src('./assets/stylesheets/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(cleanCSS({
@@ -85,14 +82,13 @@ gulp.task('build:scss', () => {
       gutil.log(gutil.colors.green(`${details.name}: ${details.stats.minifiedSize}`));
     }))
     .pipe(concat('bundle.css'))
-    .pipe(gulp.dest('build/css/'));
-});
+    .pipe(gulp.dest('build/css/')));
 
 gulp.task('minify:img', () => {
-    gutil.log("Minifying IMG");
-    return gulp.src('./assets/images/**/*.*')
+  gutil.log('Minifying IMG');
+  return gulp.src('./assets/images/**/*.*')
         .pipe(imagemin({
-            optimizationLevel: 9
+          optimizationLevel: 15,
         }))
         .pipe(gulp.dest('build/img/'));
 });
