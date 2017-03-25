@@ -30,3 +30,5 @@ exclude:
   - node_modules/
   - webpack*
   - yarn.lock
+
+theme: jekyll-theme-cayman
