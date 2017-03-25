@@ -12,3 +12,5 @@ categories:
     - api
 permalink: rails-angularjs-app/
 ---
+
+AngularJS client built to consume the rails API to show and create posts.

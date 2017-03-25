@@ -9,3 +9,5 @@ categories:
     - clojure
 permalink: clojure-rest-api/
 ---
+
+Simple clojure rest api using Ring framework.

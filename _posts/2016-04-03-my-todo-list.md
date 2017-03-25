@@ -9,3 +9,5 @@ categories:
     - rails
 permalink: my-todo-list/
 ---
+
+Simple implemantation of a Todo List and Todo itens using Ruby on Rails.
