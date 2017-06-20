@@ -1,1 +1,179 @@
-!function(e){function t(n){if(o[n])return o[n].exports;var r=o[n]={exports:{},id:n,loaded:!1};return e[n].call(r.exports,r,r.exports,t),r.loaded=!0,r.exports}var o={};return t.m=e,t.c=o,t.p="/build/js",t(0)}([function(e,t,o){e.exports=o(1)},function(e,t,o){"use strict";o(2);var n=function(){var e=document.querySelector(".navigation"),t=document.querySelector(".open-nav-btn"),o=document.querySelector("#overlay"),n=document.getElementById("appContainer");e.className=e.className.split(" open-nav").join(""),t.className=t.className.split(" is-open").join(""),n.className="open",o.className=""},r=function(){var e=document.getElementById("appContainer");"open"===e.className?e.className="":e.className="open"},a=function(){var e=document.querySelector(".navigation"),t=document.querySelector(".open-nav-btn"),o=document.querySelector("#overlay"),r=document.getElementById("appContainer");e.className.includes("open-nav")?n():(e.className+=" open-nav",t.className+=" is-open",o.className="open overlay open-overlay no-overflow",r.className+=" "+o.className,t.blur())};document.querySelector(".open-btn").addEventListener("click",r,!1),document.querySelector(".open-nav-btn").addEventListener("click",a,!1),document.querySelector("#overlay").addEventListener("click",n,!1),document.querySelectorAll(".link-item").forEach(function(e){return e.addEventListener("click",n,!1)})},function(e,t){"use strict";Array.prototype.map||(Array.prototype.map=function(e,t){var o=void 0,n=void 0,r=void 0;if(null==this)throw new TypeError(" this is null or not defined");var a=Object(this),c=a.length>>>0;if("function"!=typeof e)throw new TypeError(e+" is not a function");for(arguments.length>1&&(o=t),n=new Array(c),r=0;r<c;){var l=void 0,i=void 0;r in a&&(l=a[r],i=e.call(o,l,r,a),n[r]=i),r++}return n}),Array.prototype.forEach||(Array.prototype.forEach=function(e,t){for(var o=0,n=this.length;o<n;++o)e.call(t,this[o],o,this)}),NodeList.prototype.forEach||(NodeList.prototype.forEach=Array.prototype.forEach),Element.prototype.append||(Element.prototype.append=Element.prototype.appendChild)}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/build/js";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(1);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	__webpack_require__(2);
+
+	var closeNavigation = function closeNavigation() {
+	  var navigation = document.querySelector('.navigation');
+	  var openNavBtn = document.querySelector('.open-nav-btn');
+	  var overlay = document.querySelector('#overlay');
+	  var appContainer = document.getElementById('appContainer');
+
+	  navigation.className = navigation.className.split(' open-nav').join('');
+	  openNavBtn.className = openNavBtn.className.split(' is-open').join('');
+	  appContainer.className = 'open';
+	  overlay.className = '';
+	};
+
+	var toggleSideBarMenu = function toggleSideBarMenu() {
+	  var appContainer = document.getElementById('appContainer');
+
+	  if (appContainer.className === 'open') {
+	    appContainer.className = '';
+	  } else {
+	    appContainer.className = 'open';
+	  }
+	};
+
+	var toggleNavigation = function toggleNavigation() {
+	  var navigation = document.querySelector('.navigation');
+	  var openNavBtn = document.querySelector('.open-nav-btn');
+	  var overlay = document.querySelector('#overlay');
+	  var appContainer = document.getElementById('appContainer');
+
+	  if (navigation.className.includes('open-nav')) {
+	    closeNavigation();
+	  } else {
+	    navigation.className += ' open-nav';
+	    openNavBtn.className += ' is-open';
+	    overlay.className = 'open overlay open-overlay no-overflow';
+	    appContainer.className += ' ' + overlay.className;
+
+	    openNavBtn.blur();
+	  }
+	};
+
+	document.querySelector('.open-btn').addEventListener('click', toggleSideBarMenu, false);
+
+	document.querySelector('.open-nav-btn').addEventListener('click', toggleNavigation, false);
+
+	document.querySelector('#overlay').addEventListener('click', closeNavigation, false);
+
+	document.querySelectorAll('.link-item').forEach(function (element) {
+	  return element.addEventListener('click', closeNavigation, false);
+	});
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/* eslint no-tabs: 0 */
+	/* eslint indent: 0 */
+	/* eslint no-undef: 0 */
+	/* eslint no-plusplus: 0 */
+	/* eslint prefer-template: 0 */
+	/* eslint prefer-const: 0 */
+	/* eslint one-var: 0 */
+	/* eslint no-extend-native: 0 */
+	/* eslint func-names: 0 */
+	/* eslint one-var-declaration-per-line: 0 */
+	/* eslint no-bitwise: 0 */
+	/* eslint space-in-parens: 0 */
+	/* eslint keyword-spacing: 0 */
+	/* eslint space-before-function-paren: 0 */
+
+	if (!Array.prototype.map) {
+	  Array.prototype.map = function (callback, thisArg) {
+	    var T = void 0,
+	        A = void 0,
+	        k = void 0;
+	    if (this == null) {
+	      throw new TypeError(' this is null or not defined');
+	    }
+	    var O = Object(this);
+	    var len = O.length >>> 0;
+	    if (typeof callback !== 'function') {
+	      throw new TypeError(callback + ' is not a function');
+	    }
+	    if (arguments.length > 1) {
+	      T = thisArg;
+	    }
+	    A = new Array(len);
+	    k = 0;
+	    while (k < len) {
+	      var kValue = void 0,
+	          mappedValue = void 0;
+	      if (k in O) {
+	        kValue = O[k];
+	        mappedValue = callback.call(T, kValue, k, O);
+	        A[k] = mappedValue;
+	      }
+	      k++;
+	    }
+
+	    return A;
+	  };
+	}
+
+	if (!Array.prototype.forEach) {
+	  Array.prototype.forEach = function (fn, scope) {
+	    for (var i = 0, len = this.length; i < len; ++i) {
+	      fn.call(scope, this[i], i, this);
+	    }
+	  };
+	}
+
+	if (!NodeList.prototype.forEach) {
+	  NodeList.prototype.forEach = Array.prototype.forEach;
+	}
+
+	if (!Element.prototype.append) {
+	  Element.prototype.append = Element.prototype.appendChild;
+	}
+
+/***/ }
+/******/ ]);
