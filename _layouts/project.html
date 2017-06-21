@@ -1,38 +1,38 @@
 ---
-  layout: default
+    layout: default
 ---
 <article class="section">
-  <div class="container">
-    <div class="heading">
+    <div class="container">
+        <div class="heading">
 
-      <h2 class="title">{{ page.title }}</h2>
+            <h2 class="title">{{ page.title }}</h2>
 
-      <span class="subtitle">
-        {{ page.description }}
-      </span>
+            <span class="subtitle">
+                {{ page.description }}
+            </span>
 
+        </div>
+        <span>
+            {% for category in page.categories %}
+                <a href="/categories#category-{{ category }}" class="tag {% if site.data.category[category].color %} is-{{ site.data.category[category].color }} {% endif %}">{{ category }}</a>
+            {% endfor %}
+        </span>
+
+
+        <figure class="image is-16by9 portfolio-image">
+            <img src="/build/img/portfolio/{{ page.image }}">
+        </figure>
+
+        {% include separator.html %}
+
+        <div class="content">
+            <p>
+                {{content}}
+            </p>
+        </div>
+
+        {% include separator.html %}
+
+        <a href="{{ page.repo }}" class="button is-primary is-outlined is-medium is-fullwidth"> Check this project repository. </a>
     </div>
-    <span>
-      {% for category in page.categories %}
-        <a href="/categories#category-{{ category }}" class="tag {% if site.data.category[category].color %} is-{{ site.data.category[category].color }} {% endif %}">{{ category }}</a>
-      {% endfor %}
-    </span>
-
-
-    <figure class="image is-16by9 portfolio-image">
-      <img src="/build/img/portfolio/{{ page.image }}">
-    </figure>
-
-    {% include separator.html %}
-
-    <div class="content">
-      <p>
-        {{content}}
-      </p>
-    </div>
-
-    {% include separator.html %}
-
-    <a href="{{ page.repo }}" class="button is-primary is-outlined is-medium is-fullwidth"> Check this project repository. </a>
-  </div>
 </article>

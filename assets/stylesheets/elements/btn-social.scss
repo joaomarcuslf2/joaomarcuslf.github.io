@@ -1,46 +1,46 @@
 .btn-social {
-	margin-top: 15px;
+    margin-top: 15px;
 
-	height: 40px;
-	width: 40px;
+    height: 40px;
+    width: 40px;
 
-	border-radius: 100%;
-	padding: 0 !important;
+    border-radius: 100%;
+    padding: 0 !important;
 }
 
 .social-media {
-	width: 100%;
+    width: 100%;
 
-	.social-content {
-		align-items: center;
+    .social-content {
+        align-items: center;
     justify-content: center;
-	}
+    }
 }
 
 @media (max-width : 768px) {
-	.social-media {
-		position: absolute;
-		bottom: 15px;
-		max-width: 70%
-	}
+    .social-media {
+        position: absolute;
+        bottom: 15px;
+        max-width: 70%
+    }
 }
 
 .medium {
-	@include social-icons('medium');
+    @include social-icons('medium');
 }
 
 .facebook {
-	@include social-icons('facebook');
+    @include social-icons('facebook');
 }
 
 .github {
-	@include social-icons('github');
+    @include social-icons('github');
 }
 
 .twitter {
-	@include social-icons('twitter');
+    @include social-icons('twitter');
 }
 
 .linkedin {
-	@include social-icons('linkedin');
+    @include social-icons('linkedin');
 }

@@ -2,30 +2,30 @@
 layout: default
 ---
 <section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container is-fluid">
-      <h1 class="title">
-        {{site.name}}
-      </h1>
-      <h2 class="subtitle">
-        {{site.description}}
-      </h2>
+    <div class="hero-body">
+        <div class="container is-fluid">
+            <h1 class="title">
+                {{site.name}}
+            </h1>
+            <h2 class="subtitle">
+                {{site.description}}
+            </h2>
+        </div>
     </div>
-  </div>
 </section>
 <section class="section">
-  <div class="container is-fluid">
-    <aside class="menu">
-      {% for category in site.categories %} {% capture category_name %}{{ category | first }}{% endcapture %}
-      <p class="menu-label" id="category-{{ category | first | slugize }}">
-        {{ category | first }}
-      </p>
-      <ul class="menu-list">
-        {% for post in site.categories[category_name] %}
-        <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-      {% endfor %}
-    </aside>
-  </div>
+    <div class="container is-fluid">
+        <aside class="menu">
+            {% for category in site.categories %} {% capture category_name %}{{ category | first }}{% endcapture %}
+            <p class="menu-label" id="category-{{ category | first | slugize }}">
+                {{ category | first }}
+            </p>
+            <ul class="menu-list">
+                {% for post in site.categories[category_name] %}
+                <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </aside>
+    </div>
 </section>
