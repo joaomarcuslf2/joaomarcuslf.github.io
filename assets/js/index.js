@@ -1,49 +1,12 @@
-import './pollyfils';
-
-const closeNavigation = () => {
-  const navigation = document.querySelector('.navigation');
-  const openNavBtn = document.querySelector('.open-nav-btn');
-  const overlay = document.querySelector('#overlay');
-  const appContainer = document.getElementById('appContainer');
-
-  navigation.className = navigation
-    .className
-    .split(' open-nav')
-    .join('');
-  openNavBtn.className = openNavBtn
-    .className
-    .split(' is-open')
-    .join('');
-  appContainer.className = 'open';
-  overlay.className = '';
+var toggleSideBarMenu = function () {
+  document.getElementById('appContainer').className.toggle('open');
 };
 
-const toggleSideBarMenu = () => {
-  const appContainer = document.getElementById('appContainer');
-
-  if (appContainer.className === 'open') {
-    appContainer.className = '';
-  } else {
-    appContainer.className = 'open';
-  }
-};
-
-const toggleNavigation = () => {
-  const navigation = document.querySelector('.navigation');
-  const openNavBtn = document.querySelector('.open-nav-btn');
-  const overlay = document.querySelector('#overlay');
-  const appContainer = document.getElementById('appContainer');
-
-  if (navigation.className.includes('open-nav')) {
-    closeNavigation();
-  } else {
-    navigation.className += ' open-nav';
-    openNavBtn.className += ' is-open';
-    overlay.className = 'open overlay open-overlay no-overflow';
-    appContainer.className += ` ${overlay.className}`;
-
-    openNavBtn.blur();
-  }
+var toggleNavigation = function () {
+  document.querySelector('.navigation').className.toggle(' open-nav');
+  document.querySelector('.open-nav-btn').className.toggle(' is-open');
+  document.getElementById('overlay').className.toggle('open overlay open-overlay no-overflow');
+  document.getElementById('appContainer').className.toggle('open');
 };
 
 document
@@ -56,8 +19,10 @@ document
 
 document
   .querySelector('#overlay')
-  .addEventListener('click', closeNavigation, false);
+  .addEventListener('click', toggleNavigation, false);
 
-document
-  .querySelectorAll('.link-item')
-  .forEach(element => element.addEventListener('click', closeNavigation, false));
+var linkItem = document.querySelectorAll('.link-item');
+
+for (var i = 0; i < linkItem.length; i++) {
+  linkItem[i].addEventListener('click', toggleNavigation, false);
+}
