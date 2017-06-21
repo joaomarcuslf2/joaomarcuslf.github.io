@@ -5,7 +5,7 @@
   "scripts": {
     "start": "yarn install --silent && bundle install && gulp run:build",
     "server": "bundle exec jekyll serve",
-    "dev": "nf start",
+    "dev": "bundle exec foreman start",
     "build": "gulp run:build",
     "build:js": "webpack --minimize",
     "bundle:js": "webpack",
@@ -36,8 +36,6 @@
     "eslint-plugin-import": "^2.2.0",
     "exports-loader": "^0.6.3",
     "expose-loader": "^0.7.1",
-    "foreman": "^2.0.0",
-    "fs-extra": "^2.1.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.3.2",
