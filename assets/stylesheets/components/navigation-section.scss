@@ -1,66 +1,66 @@
 .navigation-section {
-	@media (min-width : 1025px) {
-		/* Desktop */
-		max-width: 30%;
-		min-width: 400px;
-		overflow-y: hidden;
-		float: left;
-		margin-right: 10px;
+    @media (min-width : 1025px) {
+        /* Desktop */
+        max-width: 30%;
+        min-width: 400px;
+        overflow-y: hidden;
+        float: left;
+        margin-right: 10px;
 
-		.hero.is-primary {
-			height: 100vh;
-			overflow-y: auto;
-		}
+        .hero.is-primary {
+            height: 100vh;
+            overflow-y: auto;
+        }
 
-		.menu-list {
-			margin-bottom: 30px;
-		}
+        .menu-list {
+            margin-bottom: 30px;
+        }
 
-		.navigation {
-			padding: 0 10px;
-		}
-	}
+        .navigation {
+            padding: 0 10px;
+        }
+    }
 
-	.navigation {
-		.container {
-			margin: -15px auto 0;
-		}
-	}
+    .navigation {
+        .container {
+            margin: -15px auto 0;
+        }
+    }
 
-	@media (min-width : 768px) {
-		/* Tablet and Desktop */
-		@include content-block();
-	}
+    @media (min-width : 768px) {
+        /* Tablet and Desktop */
+        @include content-block();
+    }
 }
 
 @media (min-width : 768px) and (max-width : 1024px) {
-	/* Tablet */
-	.navigation-section {
-		width: 90px;
-		overflow-y: hidden;
-		float: left;
-		margin-right: 10px;
-		.hero {
-			height: 100%;
-			overflow-y: auto;
-		}
+    /* Tablet */
+    .navigation-section {
+        width: 90px;
+        overflow-y: hidden;
+        float: left;
+        margin-right: 10px;
+        .hero {
+            height: 100%;
+            overflow-y: auto;
+        }
 
-		.hidden-if-not-open {
-			display: none !important;
-		}
+        .hidden-if-not-open {
+            display: none !important;
+        }
 
-		transition-property: width;
+        transition-property: width;
     transition-duration: .1s;
     transition-timing-function: ease;
-	}
+    }
 
-	.open {
-		.navigation-section {
-			width: 400px;
+    .open {
+        .navigation-section {
+            width: 400px;
 
-			.hidden-if-not-open {
-				display: block !important;
-			}
-		}
-	}
+            .hidden-if-not-open {
+                display: block !important;
+            }
+        }
+    }
 }

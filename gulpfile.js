@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const gutil = require('gulp-util');
-const babel = require('babel-core/register');
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
@@ -18,7 +17,7 @@ gulp.task('default', () => {
 
 // Bundle
 
-gulp.task('bundle:img', ['minify:img'], (callback) => {});
+gulp.task('bundle:img', ['minify:img'], () => {});
 
 gulp.task('bundle:js', () => {
   gutil.log('Starting bundle js files task');
@@ -75,8 +74,8 @@ gulp.task('build:scss', () => gulp.src('./assets/stylesheets/main.scss')
     .pipe(autoprefixer())
     .pipe(cleanCSS({
       compatibility: 'ie8',
-      debug: true
-    }, function(details) {
+      debug: true,
+    }, (details) => {
       gutil.log(gutil.colors.red(`${details.name}: ${details.stats.originalSize}`));
       gutil.log(gutil.colors.green(`${details.name}: ${details.stats.minifiedSize}`));
     }))

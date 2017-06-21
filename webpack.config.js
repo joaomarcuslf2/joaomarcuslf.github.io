@@ -1,19 +1,19 @@
-var path = require('path');
-var webpack = require('webpack');
-var minimize = process.argv.indexOf('--minimize') !== -1;
-var plugins = [];
+const path = require('path');
+const webpack = require('webpack');
+const minimize = process.argv.indexOf('--minimize') !== -1;
+const plugins = [];
 
 if (minimize) {
   plugins.push(new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false },
-      minimize: true
-    }));
+    compress: { warnings: false },
+    minimize: true,
+  }));
 }
 
 module.exports = {
   context: __dirname,
   entry: [
-    './assets/js/index.js'
+    './assets/js/index.js',
   ],
 
   output: {
@@ -24,14 +24,14 @@ module.exports = {
 
   resolve: {
     extensions: ['', '.js', '.es6'],
-    modulesDirectories: [ 'node_modules'],
+    modulesDirectories: ['node_modules'],
   },
 
-  plugins: plugins,
+  plugins,
 
   module: {
     preLoaders: [
-        { test: [/\.js$/, /\.es6$/], exclude: /node_modules/, loader: 'eslint', options: { fix: true } }
+        { test: [/\.js$/, /\.es6$/], exclude: /node_modules/, loader: 'eslint', options: { fix: true } },
     ],
     loaders: [
       { test: /\.json$/, loader: 'json' },
@@ -40,9 +40,9 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['es2015', 'stage-0']
-        }
-      }
-    ]
-  }
+          presets: ['es2015', 'stage-0'],
+        },
+      },
+    ],
+  },
 };
