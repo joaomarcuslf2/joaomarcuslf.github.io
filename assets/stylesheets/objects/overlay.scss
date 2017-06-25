@@ -1,7 +1,7 @@
 .overlay {
 	z-index: 5;
 	display: none;
-    
+
     &.open-overlay {
         display: block;
         position: fixed;

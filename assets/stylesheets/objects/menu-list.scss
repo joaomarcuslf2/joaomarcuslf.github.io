@@ -1,65 +1,65 @@
 .menu-list {
-    width: 100%;
+        width: 100%;
 
-    .list-item {
-        a:before {
-            content: "> ";
+        .list-item {
+                a:before {
+                        content: "> ";
+                }
         }
-    }
 }
 
 .open-nav-btn {
-    display: none;
+        display: none;
 }
 
 @media (max-width : 768px) {
-    // Mobile
-    .navigation {
-        display: none;
-        width: 0;
+        // Mobile
+        .navigation {
+                display: none;
+                width: 0;
 
-        &.open-nav {
-            display: flex;
-            position: fixed;
-            top: 5px;
-            right: 5px;
-            width: 75%;
-            height: calc(100% - 10px);
-            padding: 15px;
-            padding-top: 0px;
-            background: #fafafa;
-            z-index: 10;
+                &.open-nav {
+                        display: flex;
+                        position: fixed;
+                        top: 5px;
+                        right: 5px;
+                        width: 75%;
+                        height: calc(100% - 10px);
+                        padding: 15px;
+                        padding-top: 0px;
+                        background: #fafafa;
+                        z-index: 10;
+                }
         }
-    }
 
-    .open-nav-btn {
-        display: block;
-        position: fixed;
-        top: 5px;
-    right: 5px;
-        z-index: 15;
-        height: 50px;
-        width: 50px;
-        border-radius: 100%;
-        border: 1px solid #2a2731;
-        background: rgba(250, 250, 250, .8);
+        .open-nav-btn {
+                display: block;
+                position: fixed;
+                top: 5px;
+        right: 5px;
+                z-index: 15;
+                height: 50px;
+                width: 50px;
+                border-radius: 100%;
+                border: 1px solid #2a2731;
+                background: rgba(250, 250, 250, .8);
 
-        div {
-            background: url(../img/icons/menu-icon.png);
-            background-size: contain;
-    	background-repeat: no-repeat;
-            height: 35px;
-            width : 35px;
-            margin: 0 auto;
-            padding: 5px;
+                div {
+                        background: url(../img/icons/menu-icon.png);
+                        background-size: contain;
+        	background-repeat: no-repeat;
+                        height: 35px;
+                        width : 35px;
+                        margin: 0 auto;
+                        padding: 5px;
+                }
         }
-    }
 
-    .open-nav-btn.is-open {
-        div {
-            background: url(../img/icons/close-icon.png);
-            background-size: contain;
-    	background-repeat: no-repeat;
+        .open-nav-btn.is-open {
+                div {
+                        background: url(../img/icons/close-icon.png);
+                        background-size: contain;
+        	background-repeat: no-repeat;
+                }
         }
-    }
 }
