@@ -1,4 +1,4 @@
 server: bundle exec jekyll serve
-assetScss: gulp watch:scss
-assetImgs: gulp watch:img
-webpack: npm run watch:js
+assetScss: yarn gulp watch:scss
+assetImgs: yarn gulp watch:img
+assetJs: yarn gulp watch:js

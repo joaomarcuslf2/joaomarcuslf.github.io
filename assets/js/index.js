@@ -1,12 +1,29 @@
+var toggleClass = function (element, className) {
+  let classNames = element.className.split(' ');
+  let index = classNames.indexOf(className);
+  if (index === -1) {
+    classNames.push(className);
+  } else {
+    classNames.splice(index, 1);
+  }
+  element.className = classNames.filter(item => item !== '').join(' ');
+}
+
 var toggleSideBarMenu = function () {
-  document.getElementById('appContainer').className.toggle('open');
+  toggleClass(document.getElementById('appContainer'), 'open')
 };
 
 var toggleNavigation = function () {
-  document.querySelector('.navigation').className.toggle(' open-nav');
-  document.querySelector('.open-nav-btn').className.toggle(' is-open');
-  document.getElementById('overlay').className.toggle('open overlay open-overlay no-overflow');
-  document.getElementById('appContainer').className.toggle('open');
+  toggleClass(document.querySelector('.navigation'), 'open-nav')
+  toggleClass(document.querySelector('.open-nav-btn'), 'is-open')
+  toggleClass(document.getElementById('appContainer'), 'open')
+
+  var classses = 'open overlay open-overlay no-overflow'.split(' ');
+  var overlay = document.getElementById('overlay');
+
+  for (var i = 0; i < classses.length; i++) {
+    toggleClass(overlay, classses[i])
+  }
 };
 
 document

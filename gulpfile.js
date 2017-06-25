@@ -4,9 +4,9 @@ const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const sass = require('gulp-sass');
-const exec = require('child_process').exec;
 const cssBeautify = require('gulp-cssbeautify');
 const cssComb = require('gulp-csscomb');
+const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 
 /* Tasks */
@@ -21,7 +21,9 @@ gulp.task('bundle:img', ['minify:img'], () => {});
 
 gulp.task('bundle:js', () => {
   gutil.log('Starting bundle js files task');
-  return exec('npm run bundle:js');
+  gulp.src('./assets/js/**/*.js')
+    .pipe(concat('bundle.js'))
+    .pipe(gulp.dest('build/js/'));
 });
 
 gulp.task('bundle:scss', () => {
@@ -50,8 +52,14 @@ gulp.task('bundle:scss', () => {
 
 gulp.task('watch:assets', () => {
   gutil.log('Starting gulp scss bundle watcher');
-  gulp.watch('assets/**/*.*', ['bundle:scss', 'bundle:img']);
+  gulp.watch('assets/**/*.*', ['bundle:scss', 'bundle:img', 'bundle:js']);
 });
+
+gulp.task('watch:js', () => {
+  gutil.log('Starting gulp js bundle watcher');
+  gulp.watch('assets/js/**/*.js', ['bundle:js']);
+});
+
 
 gulp.task('watch:scss', () => {
   gutil.log('Starting gulp scss bundle watcher');
@@ -67,7 +75,10 @@ gulp.task('watch:img', () => {
 
 gulp.task('run:build', ['build:js', 'build:scss', 'minify:img'], () => {});
 
-gulp.task('build:js', () => exec('npm run build:js'));
+gulp.task('build:js', () => gulp.src('./assets/js/**/*.js')
+  .pipe(concat('bundle.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('build/js/')));
 
 gulp.task('build:scss', () => gulp.src('./assets/stylesheets/main.scss')
     .pipe(sass().on('error', sass.logError))
